@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\Nappa\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Nappa\\.nuget\\packages"
+      "/Users/nappa/.dotnet/store/|arch|/|tfm|",
+      "/Users/nappa/.nuget/packages"
     ]
   }
 }

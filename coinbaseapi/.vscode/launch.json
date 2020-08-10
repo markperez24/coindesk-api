@@ -9,9 +9,9 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "${workspaceFolder}/coinbaseapi/bin/Debug/netcoreapp3.1/coinbaseapi.dll",
+      "program": "${workspaceFolder}/bin/Debug/netcoreapp3.1/coinbaseapi.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/coinbaseapi",
+      "cwd": "${workspaceFolder}",
       "stopAtEntry": false,
       "serverReadyAction": {
         "action": "openExternally",

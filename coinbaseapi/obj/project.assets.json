@@ -52,26 +52,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nappa\\.nuget\\packages\\": {}
+    "/Users/nappa/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nappa\\source\\repos\\coinbaseapi\\coinbaseapi\\coinbaseapi.csproj",
+      "projectUniqueName": "/Users/nappa/Documents/GitHub/coindesk-api/coinbaseapi/coinbaseapi.csproj",
       "projectName": "coinbaseapi",
-      "projectPath": "C:\\Users\\Nappa\\source\\repos\\coinbaseapi\\coinbaseapi\\coinbaseapi.csproj",
-      "packagesPath": "C:\\Users\\Nappa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nappa\\source\\repos\\coinbaseapi\\coinbaseapi\\obj\\",
+      "projectPath": "/Users/nappa/Documents/GitHub/coindesk-api/coinbaseapi/coinbaseapi.csproj",
+      "packagesPath": "/Users/nappa/.nuget/packages/",
+      "outputPath": "/Users/nappa/Documents/GitHub/coindesk-api/coinbaseapi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nappa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/nappa/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -103,16 +101,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.2, 3.1.2]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.1.2, 3.1.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -121,7 +109,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-preview.5.20279.10\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
       }
     }
   }
