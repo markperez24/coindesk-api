@@ -1,5 +1,6 @@
 {
   "files.exclude": {
+    "**/bin": true,
     "**/obj": true,
     "**/Properties": true,
     "**/.vs": true

@@ -5,31 +5,31 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace coinbaseapi.Hubs
 {
-  public class BTCHub : Hub
-  {
-    private readonly IApiService _apiService;
-    private readonly IMemoryCache _memoryCache;
-
-    public BTCHub(IApiService apiService, IMemoryCache memoryCache)
+    public class BTCHub : Hub
     {
-      _apiService = apiService;
-      _memoryCache = memoryCache;
-    }
+        private readonly IApiService _apiService;
+        private readonly IMemoryCache _memoryCache;
 
-    public override async Task OnConnectedAsync()
-    {
-      await InitializeBtcPolling();
-      await base.OnConnectedAsync();
-    }
+        public BTCHub(IApiService apiService, IMemoryCache memoryCache)
+        {
+            _apiService = apiService;
+            _memoryCache = memoryCache;
+        }
 
-    private async Task InitializeBtcPolling()
-    {
-      var priceList = _memoryCache.Get("PriceList");
-      if (priceList == null)
-      {
-        await _apiService.StartPollingCoindesk();
-      }
-    }
+        public override async Task OnConnectedAsync()
+        {
+            await InitializeBtcPolling();
+            await base.OnConnectedAsync();
+        }
 
-  }
+        private async Task InitializeBtcPolling()
+        {
+            var priceList = _memoryCache.Get("PriceList");
+            if (priceList == null)
+            {
+                await _apiService.StartPollingCoindesk();
+            }
+        }
+
+    }
 }
