@@ -18,11 +18,11 @@ namespace coinbaseapi.Hubs
 
         public override async Task OnConnectedAsync()
         {
-            await InitializeBtcPolling();
+            await InitializeCurrencyPolling();
             await base.OnConnectedAsync();
         }
 
-        private async Task InitializeBtcPolling()
+        private async Task InitializeCurrencyPolling()
         {
             var priceList = _memoryCache.Get("PriceList");
             if (priceList == null)

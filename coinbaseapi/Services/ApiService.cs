@@ -31,18 +31,34 @@ namespace coinbaseapi.Services
 
         public async Task<Price> GetCurrentBtcPrice()
         {
-            var response = await _httpClient.GetStringAsync("https://api.coindesk.com/v1/bpi/currentprice/NZD");
+            //Bitcoin API provided by Coinbase
+            var response = await _httpClient.GetStringAsync("https://api.coinbase.com/v2/exchange-rates?currency=BTC");
             CurrentPriceResponse currentPrice = JsonConvert.DeserializeObject<CurrentPriceResponse>(response);
-            return new Price() { Value = currentPrice.BPI.NZD.RateFloat, Date = Convert.ToDateTime(currentPrice.Time.UpdatedIso) };
+            return new Price() { Value = currentPrice.Data.Rates.RateFloatNZD, Currency = "Bitcoin(BTC)" };
+        }
+        
+        public async Task<Price> GetCurrentEthPrice()
+        {
+            //Ethereum API provided by Coinbase
+            var response = await _httpClient.GetStringAsync("https://api.coinbase.com/v2/exchange-rates?currency=ETH");
+            CurrentPriceResponse currentPrice = JsonConvert.DeserializeObject<CurrentPriceResponse>(response);
+            return new Price() { Value = currentPrice.Data.Rates.RateFloatNZD, Currency = "Ethereum(ETH)" };
         }
 
         public async Task StartPollingCoindesk()
         {
             while (true)
             {
+                //Fetch current bitcoin price/rate
                 Price currentPrice = await GetCurrentBtcPrice();
                 AddPriceToListInMemory(currentPrice);
                 SendCurrentPriceToHub(currentPrice);
+                
+                //Fetch current ethereum price/rate
+                currentPrice = await GetCurrentEthPrice();
+                AddPriceToListInMemory(currentPrice);
+                SendCurrentPriceToHub(currentPrice);
+
                 Thread.Sleep(_pollingInterval);
             }
         }
@@ -62,7 +78,7 @@ namespace coinbaseapi.Services
                 priceList = _cache.Get("PriceList") as List<Price>;
             }
 
-            if (priceList.Count == 5)
+            if (priceList.Count == 2)
             {
                 priceList.RemoveAt(0);
             }

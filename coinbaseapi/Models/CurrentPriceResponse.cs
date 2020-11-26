@@ -6,6 +6,7 @@ namespace coinbaseapi.Models
   {
     public CurrentPriceResponseTime Time { get; set; }
     public CurrentPriceResponseBPI BPI { get; set; }
+    public CurrentPriceResponseData Data { get; set; }
   }
 
   public class CurrentPriceResponseTime
@@ -23,11 +24,19 @@ namespace coinbaseapi.Models
 
     [JsonProperty("rate_float")]
     public float RateFloat { get; set; }
+
+    [JsonProperty("NZD")]
+    public float RateFloatNZD { get; set; }
   }
 
   public class CurrentPriceResponseBPI
   {
     public CurentPriceResponseIndex USD { get; set; }
     public CurentPriceResponseIndex NZD { get; set; }
+  }
+
+  public class CurrentPriceResponseData
+  {
+    public CurentPriceResponseIndex Rates { get; set;  }
   }
 }
